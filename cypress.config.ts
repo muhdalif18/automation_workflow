@@ -1,18 +1,14 @@
 import { defineConfig } from "cypress";
+import allureWriter from "@shelex/cypress-allure-plugin/writer";
 
 export default defineConfig({
   e2e: {
-    // This runs your test files with `.cy.ts` inside the e2e folder
     specPattern: "cypress/e2e/**/*.cy.ts",
-
-    // Support file for global setup (like custom commands, etc.)
     supportFile: "cypress/support/e2e.ts",
-
-    // Base URL for `cy.visit('/')`
     baseUrl: "https://my-shop-eight-theta.vercel.app",
-
     setupNodeEvents(on, config) {
-      // You can add plugins or event listeners here if needed
+      allureWriter(on, config);
+      return config;
     },
   },
 });

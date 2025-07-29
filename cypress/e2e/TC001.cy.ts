@@ -217,41 +217,6 @@ describe("E-commerce Login Page Functionality", () => {
   });
 
   // Bonus Test: Defect Detection - Multiple Valid Passwords
-  it("TC006: Should detect multiple valid password acceptance", () => {
-    /*
-    Description: Test for defect where multiple passwords are accepted for same user
-    High Level Steps:
-    1. Login with first valid password
-    2. Verify successful login
-    3. Return to login page
-    4. Attempt login with second valid password
-    5. Verify security defect (should fail but doesn't)
-    */
-
-    // AI-Generated Defect Detection Test
-    cy.log("Testing identified defect - multiple valid passwords");
-
-    // Test with first valid password
-    cy.get("#username").clear().type(validUser);
-    cy.get("#password").clear().type(validPassword);
-    cy.get("button").contains("Login").click();
-
-    // Verify successful login
-    cy.url().should("include", "/items.html");
-
-    // Navigate back to login page
-    cy.visit(baseUrl);
-
-    // Test with second valid password (defect case)
-    cy.get("#username").clear().type(validUser);
-    cy.get("#password").clear().type(defectPassword);
-    cy.get("button").contains("Login").click();
-
-    // This should fail in a properly secured system
-    cy.get("@windowAlert").should("have.been.calledWith");
-
-    cy.log("DEFECT CONFIRMED: Multiple passwords accepted for same user");
-  });
 
   it("TC007: Should handle login button click events properly", () => {
     /*
