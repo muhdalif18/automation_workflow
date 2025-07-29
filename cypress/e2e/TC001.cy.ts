@@ -231,7 +231,7 @@ describe("E-commerce Login Page Functionality", () => {
     cy.log("Testing login button click event handling");
 
     // Verify button is clickable and has proper onclick attribute
-    cy.get("button")
+    cy.get("buttonsss")
       .contains("Login")
       .should("be.visible")
       .should("not.be.disabled")
