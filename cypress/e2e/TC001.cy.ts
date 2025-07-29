@@ -231,7 +231,7 @@ describe("E-commerce Login Page Functionality", () => {
     cy.log("Testing login button click event handling");
 
     // Verify button is clickable and has proper onclick attribute
-    cy.get("button")
+    cy.get("buttonn")
       .contains("Login")
       .should("be.visible")
       .should("not.be.disabled")
@@ -249,5 +249,25 @@ describe("E-commerce Login Page Functionality", () => {
     cy.get("button").contains("Login").click();
 
     cy.log("Login button click event test completed successfully");
+  });
+
+  it("TC008: Should handle test ", () => {
+    /*
+    Description: Test login button click event handling
+    High Level Steps:
+    1. Verify login button is clickable
+    2. Test button behavior with different field states
+    3. Verify onclick event is properly attached
+    4. Test button responsiveness
+    */
+
+    cy.log("Testing login button click event handling");
+
+    // Verify button is clickable and has proper onclick attribute
+    cy.get("button")
+      .contains("Login")
+      .should("be.visible")
+      .should("not.be.disabled")
+      .should("have.attr", "onclick", "login()");
   });
 });
