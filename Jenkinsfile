@@ -14,19 +14,19 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        sh 'npm ci'
+        bat 'npm ci'
       }
     }
 
     stage('Run Tests') {
       steps {
-        sh 'npx cypress run --env allure=true'
+        bat 'npx cypress run --env allure=true'
       }
     }
 
     stage('Generate Allure Report') {
       steps {
-        sh 'npx allure generate --clean'
+        bat 'npx allure generate --clean'
       }
     }
   }
