@@ -50,4 +50,36 @@ describe("E-commerce Login Page Functionality", () => {
 
     cy.log("Valid login test completed successfully");
   });
+  it("TC002: Should successfully test login", () => {
+    /*
+    Description: Test valid login functionality with correct credentials
+    High Level Steps:
+    1. Enter valid username and password
+    2. Click login button
+    3. Verify successful redirect to items page
+    4. Verify items page content loads correctly
+    */
+
+    // AI-Generated Test Steps
+    cy.log("Testing valid login functionality");
+
+    // Enter valid credentials
+    cy.get("#username").clear().type(validUser).should("have.value", validUser);
+
+    cy.get("#password")
+      .clear()
+      .type(validPassword)
+      .should("have.value", validPassword);
+
+    // Click login button
+    cy.get("button").contains("Login").click();
+
+    // Verify successful login by checking URL redirect
+    cy.url().should("include", "/items.html");
+
+    // Verify items page content is loaded
+    cy.get("h2").should("contain", "Select Your Items");
+
+    cy.log("Valid login test completed successfully");
+  });
 });
