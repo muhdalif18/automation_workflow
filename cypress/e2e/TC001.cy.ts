@@ -50,7 +50,7 @@ describe("E-commerce Login Page Functionality", () => {
 
     cy.log("Valid login test completed successfully");
   });
-  it("TC002: Should successfully test login", () => {
+  it("TC002: Should successfully test", () => {
     /*
     Description: Test valid login functionality with correct credentials
     High Level Steps:
@@ -64,10 +64,7 @@ describe("E-commerce Login Page Functionality", () => {
     cy.log("Testing valid login functionality");
 
     // Enter valid credentials
-    cy.get("#usernasme")
-      .clear()
-      .type(validUser)
-      .should("have.value", validUser);
+    cy.get("#username").clear().type(validUser).should("have.value", validUser);
 
     cy.get("#password")
       .clear()
