@@ -64,7 +64,10 @@ describe("E-commerce Login Page Functionality", () => {
     cy.log("Testing valid login functionality");
 
     // Enter valid credentials
-    cy.get("#username").clear().type(validUser).should("have.value", validUser);
+    cy.get("#usernasme")
+      .clear()
+      .type(validUser)
+      .should("have.value", validUser);
 
     cy.get("#password")
       .clear()
